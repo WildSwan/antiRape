@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 // Route to accept HTTP from SIM800L and forward to Firebase
 app.post('/firebase', async (req, res) => {
   try {
-    const { data } = req.body;  // Data from SIM800L
+    const data = req.body;  // Data from SIM800L
     const firebaseUrl = 'https://women-safety-device-3a56d-default-rtdb.firebaseio.com/00001.json?auth=ZrEhJQOWXmFD4AMvKFvhz7l7Vlg3d6iimpy3Luiq';
 
     const response = await axios.put(firebaseUrl, data, {
